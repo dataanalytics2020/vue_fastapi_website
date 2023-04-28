@@ -1,30 +1,44 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <p class="bg-blue-200 text-2xl p-4 m-4 ">Hello World!</p>
+  <div class="container mx-auto mt-4">
+    <select class="select select-primary mb-4">
+      <option disabled selected>性別は？</option>
+      <option>男性</option>
+      <option>女性</option>
+    </select>
+    <br>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+    <select class="select select-primary mb-4">
+      <option disabled selected>階級は？</option>
+      <option>上層クラス（お金持ち）</option>
+      <option>中級クラス（一般階級）</option>
+      <option>下層クラス（労働階級）</option>
+    </select>
+    <br>
+    <select class="select select-primary mb-4">
+     <option disabled selected>年齢は？</option>
+     <option v-for="i in [...Array(121).keys()]">
+      　{{ i }}
+      </option>
+   </select> 歳
+   <br>
+   <select class="select select-primary mb-4">
+     <option disabled selected>親・子の同伴者数は？</option>
+     <option v-for="i in [...Array(11).keys()]">
+       {{ i }} 
+     </option>
+   </select> 人
+   <br>
+   <select class="select select-primary mb-4">
+     <option disabled selected>兄弟姉妹の同伴者数は？</option>
+     <option v-for="i in [...Array(11).keys()]">
+       {{ i }} 
+     </option>
+   </select> 人
+   <br>
+   <button class="btn btn-primary">結果を出力</button>
+ </div>
+</template>
